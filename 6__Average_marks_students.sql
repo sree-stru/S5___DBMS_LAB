@@ -32,7 +32,6 @@ BEGIN
     DBMS_OUTPUT.PUT_LINE(RPAD('ID',6) || RPAD('NAME',15) || RPAD('MARKS',10));
     DBMS_OUTPUT.PUT_LINE('------------------------------------');
 
-
     -- Print each student's marks--
     FOR rec IN (SELECT student_id, name, marks FROM students ORDER BY student_id) 
     LOOP

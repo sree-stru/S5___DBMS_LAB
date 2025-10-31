@@ -1,0 +1,59 @@
+
+EXPERIMENT NO: 03
+SET OPERATIONS AND AGGREGATE FUNCTIONS 
+
+Set Operations
+Set operations combine the results of two or more SELECT statements. The number of
+columns and their data types must be the same in all queries being combined.
+1. UNION: Combines the result sets of two or more SELECT statements and removes
+duplicate rows.
+2. UNION ALL: Combines the result sets but includes all rows, including duplicates.
+Syntax:
+SELECT column1, column2, ... FROM table1 [WHERE condition1] UNION
+SELECT column1, column2, ... FROM table2 [WHERE condition2];
+3. INTERSECT: Returns the rows that are common to all combined SELECT
+statements.
+4. EXCEPT (or MINUS): Returns rows from the first SELECT statement that are not
+present in the second.
+Aggregate Functions
+Aggregate functions operate on a set of rows to return a single summary value.
+1. COUNT(): Returns the number of rows that match a specified condition.
+a. COUNT(*): Counts all rows in the result set, including NULL values.
+b. COUNT(column_name): Counts rows where the specified column_name is not
+NULL.
+c. COUNT(DISTINCT column_name): Counts the number of unique, non-NULL
+values in a column.
+
+2. SUM(column_name): Calculates the sum of a set of numeric values. It ignores NULL
+values.
+3. AVG(column_name): Calculates the average of a set of numeric values. It also ignores
+NULL values.
+4. MAX(column_name): Finds the maximum value in a column. It works on numeric,
+string, and date columns.
+5. MIN(column_name): Finds the minimum value in a column. It works on numeric,
+string, and date columns.
+GROUP BY
+The GROUP BY clause groups rows that have the same values in specified columns into
+summary rows. It's often used with aggregate functions.
+
+Syntax:
+SELECT column1, aggregate_function(column2) FROM table_name GROUP BY column1;
+HAVING
+The HAVING clause is used to filter groups created by GROUP BY. It's similar to WHERE
+but operates on groups rather than individual rows.
+Syntax:
+SELECT column1, aggregate_function(column2) FROM table_name GROUP BY column1
+HAVING condition;
+ORDER BY
+The ORDER BY clause sorts the result set in ascending (ASC) or descending (DESC) order.
+Syntax:
+SELECT column1, column2 FROM table_name ORDER BY column1 [ASC|DESC],
+column2 [ASC|DESC];
+Views
+A view is a virtual table based on the result-set of an SQL statement. It doesn't store data
+itself but instead provides a different perspective on data from one or more base tables. Views
+can simplify complex queries, restrict data access, and present data in a more user-friendly
+way.
+Syntax:
+CREATE VIEW view_name AS SELECT column1, column2, ... FROM table_name
+WHERE condition;

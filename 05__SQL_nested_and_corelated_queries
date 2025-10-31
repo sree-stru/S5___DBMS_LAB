@@ -1,0 +1,46 @@
+
+EXPERIMENT NO : 5
+NESTED AND CORRELATED QUERIES
+
+SQL Nested Queries
+A nested query (also called a subquery) is a query embedded within another SQL query. The
+result of the inner query is used by the outer query to perform additional operations.
+Subqueries can be used in various parts of an SQL query such as SELECT, FROM or
+WHERE Clauses.
+Types of Nested Queries in SQL:
+1. Independent Nested Queries (Correlated Nested Queries)
+Non-correlated (or Independent) subqueries are executed independently of the outer
+query. Their results are passed to the outer query.
+Operators Used in Independent Nested Queries
+a) IN Operator : it checks if a column value in the outer query's result is present
+in the inner query's result. The final result will have rows that satisfy the IN
+condition.
+b) NOT IN Operator: checks if a column value in the outer query's result is not
+present in the inner query's result. The final result will have rows that satisfy
+the NOT IN condition.
+c) ALL Operator: compares a value of the outer query's result with all the
+values of the inner query's result and returns the row if it matches all the
+values.
+d) ANY Operator: compares a value of the outer query's result with all the
+inner query's result values and returns the row if there is a match with any
+value.
+
+2. Correlated Nested Queries.
+Correlated subqueries are executed once for each row of the outer query. They use
+values from the outer query to return results.
+Operators Used in Co-related Nested Queries
+a) EXISTS Operator: checks whether a subquery returns any row. If it returns at
+least one row. EXISTS operator returns true, and the outer query continues to
+execute. If the subquery returns no row, the EXISTS operator returns false,
+and the outer query stops execution.
+
+b) NOT EXISTS Operator: checks whether a subquery returns no rows. If the
+subquery returns no row, the NOT EXISTS operator returns true, and the outer
+query continues to execute. If the subquery returns at least one row, the NOT
+EXISTS operator returns false, and the outer query stops execution.
+c) ANY Operator: compares a value of the outer query's result with one or more
+values returned by the inner query. If the comparison is true for any one of the
+values returned by the inner query, the row is included in the final result.
+d) ALL Operator: compares a value of the outer query's result with all the values
+returned by the inner query. Only if the comparison is true for all the values
+returned by the inner query, the row is included in the final result.

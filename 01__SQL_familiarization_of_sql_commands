@@ -1,0 +1,161 @@
+
+EXPERIMENT NO : 1
+FAMILIARIZATION OF BASIC SQL COMMANDS
+
+Database
+A database is an organized collection of data that is stored and accessed electronically. It is
+designed to manage large amounts of information by storing, retrieving, and managing data
+efficiently.
+Database Management System (DBMS)
+A Database Management System (DBMS) is software that allows users to define, create,
+maintain, and control access to the database.
+Relational Database Management System (RDBMS)
+A Relational Database Management System (RDBMS) is a type of DBMS that stores data in
+tables (relations). It uses Structured Query Language (SQL) for querying and maintaining the
+database.
+SQL (STRUCTURED QUERY LANGUAGE)
+Structured Query Language is a database computer language designed for managing data in
+relational database management systems (RDBMS), and originally based upon Relational
+Algebra. Its scope includes data query and update, schema creation and modification, and
+data access control.
+DATA TYPES:
+1. CHAR (Size): This data type is used to store character strings values of fixed length.
+The maximum number of character is 255 characters.
+2. VARCHAR (Size) / VARCHAR2 (Size): This data type is used to store variable
+length alphanumeric data. The maximum character can hold is 2000 character.
+3. NUMBER (P, S): The NUMBER data type is used to store number (fixed or floating
+point). Number of virtually any magnitude may be stored up to 38 digits of precision.
+
+4. DATE: This data type is used to represent date and time. The standard format is DD-
+MM-YY as in 17-SEP-2009.
+
+5. LONG: This data type is used to store variable length character strings containing up
+to 2GB.
+6. RAW: The RAW data type is used to store binary data, such as digitized picture or
+image.
+
+Types of SQL statements
+There are five types of SQL statements. They are:
+1. DATA DEFINITION LANGUAGE (DDL)
+2. DATA MANIPULATION LANGUAGE (DML)
+3. DATA RETRIEVAL LANGUAGE (DRL)
+4. TRANSATIONAL CONTROL LANGUAGE (TCL)
+5. DATA CONTROL LANGUAGE (DCL)
+1. DATA DEFINITION LANGUAGE (DDL): The Data Definition Language (DDL)
+is used to create and destroy databases and database objects. These commands will
+primarily be used by database administrators during the setup and removal phases of a
+database project. Let's take a look at the structure and usage of four basic DDL
+commands: CREATE, ALTER, DROP, RENAME and TRUNCATE.
+a) CREATE:
+CREATE TABLE: This is used to create a new relation (table)
+Syntax: CREATE TABLE<relation_name/table_name > (field_1
+data_type(size),field_2 data_type(size), ...);
+Example: SQL> CREATE TABLE Student (sno NUMBER (3), sname CHAR
+(10), class CHAR (5));
+b) ALTER:
+i. ALTER TABLE ...ADD...: This is used to add some extra fields into existing
+relation.
+Syntax: ALTER TABLE relation_name ADD (new field_1 data_type(size), new
+field_2 data_type(size),..);
+Example: SQL>ALTER TABLE std ADD (Address CHAR(10));
+ii. ALTER TABLE...MODIFY...: This is used to change the width as well as
+data type of fields of existing relations.
+Syntax: ALTER TABLE relation_name MODIFY (field_1 newdata_type(Size),
+field_2 newdata_type(Size), ... field_newdata_type(Size));
+Example: SQL>ALTER TABLE student MODIFY(sname VARCHAR(10),class
+VARCHAR(5));
+iii. ALTER TABLE..DROP ...:. This is used to remove any field of existing
+relations.
+
+Syntax: ALTER TABLE relation_name DROP COLUMN (field_name);
+Example: SQL>ALTER TABLE student DROP column (sname);
+iv. ALTER TABLE..RENAME...: This is used to change the name of fields in
+existing relations.
+Syntax: ALTER TABLE relation_name RENAME COLUMN (OLD field_name)
+to (NEW field_name);
+Example: SQL>ALTER TABLE student RENAME COLUMN sname to
+stu_name;
+c) DROP TABLE: This is used to delete the structure of a relation.It permanently
+deletes the records in the table.
+Syntax: DROP TABLE relation_name;
+Example: SQL>DROP TABLE std;
+d) RENAME: It is used to modify the name of the existing database object.
+Syntax: RENAME TABLE old_relation_name TO new_relation_name;
+Example: SQL>RENAME TABLE std TO std1
+e) TRUNCATE: This command will remove the data permanently. But structure
+will not be removed.
+Syntax: TRUNCATE TABLE <Table name>
+Example: TRUNCATE TABLE student;
+
+2. DATA MANIPULATION LANGUAGE (DML): The Data Manipulation Language
+(DML) is used to retrieve, insert and modify database information. These commands
+will be used by all database users during the routine operation of the database. Let's
+take a brief look at the basic DML commands: INSERT, UPDATE, and DELETE.
+a) INSERT INTO: This is used to add records into a relation. These are three type
+of INSERT INTO queries which are as:
+i. Inserting a single record
+Syntax: INSERT INTO < relation/table name>
+(field_1,field_2......field_n)VALUES (data_1,data_2, ......data_n);
+
+Example: SQL>INSERT INTO student(sno,sname,class,address)VALUES
+(1,’Ravi’,’M.Tech’,’Palakol’);
+ii. Inserting a single record
+Syntax: INSERT INTO < relation/table name>VALUES (data_1,data_2, .......
+data_n);
+Example: SQL>INSERT INTO student VALUES
+(1,’Ravi’,’M.Tech’,’Palakol’);
+iii. Inserting all records from another relation
+Syntax: INSERT INTO relation_name_1 SELECT Field_1,field_2,field_n
+FROM relation_name_2 WHERE field_x=data;
+Example: SQL>INSERT INTO std SELECT sno,sname FROM student
+WHERE name = ‘Ramu‘;
+iv. Inserting multiple records
+Syntax: INSERT INTO relation_name field_1,field_2, .... field_n) VALUES
+(&data_1,&data_2, ....... &data_n);
+Example: SQL>INSERT INTO student (sno, sname, class,address) VALUES
+(&sno,’&sname’,’&class’,’&address’); Enter value for sno: 101 Enter value
+for name: Ravi Enter value for class: M.Tech Enter value for name: Palakol
+b) UPDATE-SET-WHERE: This is used to update the content of a record in a
+relation.
+Syntax: SQL>UPDATE relation name SET Field_name1=data,field_name2=data,
+WHERE field_name=data;
+Example: SQL>UPDATE student SET sname = ‘kumar’ WHERE sno=1;
+c) DELETE-FROM: This is used to delete all the records of a relation but it will
+retain the structure of that relation.
+i. DELETE-FROM: This is used to delete all the records of relation.
+Syntax: SQL>DELETE FROM relation_name;
+Example: SQL>DELETE FROM std;
+ii. DELETE -FROM-WHERE: This is used to delete a selected record from
+a relation.
+Syntax: SQL>DELETE FROM relation_name WHERE condition;
+
+Example: SQL>DELETE FROM student WHERE sno = 2;
+Difference between Truncate & Delete:-
+ By using truncate command data will be removed permanently & will not get
+back where as by using delete command data will be removed temporally & get
+back by using roll back command.
+ By using delete command data will be removed based on the condition where as
+by using truncate command there is no condition.
+ Truncate is a DDL command & delete is a DML command.
+3. DATA RETRIEVAL LANGUAGE (DRL)/ DATA QUERY LANGUAGE(DQL)
+
+DQL is used to fetch the data from the database.
+a) SELECT: To Retrieve data from one or more tables.
+i. SELECT FROM: To display all fields for all records.
+Syntax: SELECT * FROM relation_name;
+Example: SQL> select * from dept;
+ii. SELECT FROM: To display a set of fields for all records of relation.
+Syntax: SELECT a set of fields FROM relation_name;
+Example: SQL> select deptno, dname from dept;
+iii. SELECT - FROM -WHERE: This query is used to display a selected set
+of fields for a selected set of records of a relation.
+Syntax: SELECT a set of fields FROM relation_name WHERE condition;
+Example: SQL> select * FROM dept WHERE deptno<=20;
+
+4. TRANSATIONAL CONTROL LANGUAGE (TCL)
+TCL commands are used to manage transactions in database. These are used to
+manage the changes made by DML statements. This language in SQL contains the
+following commands: COMMIT, ROLLBACK and SAVE POINT.
+5. DATA CONTROL LANGUAGE (DCL)
+DCL commands are used to grant and take back authority from any database user.This
+language in SQL contains the following commands: GRANT and REVOKE.

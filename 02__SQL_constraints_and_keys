@@ -1,0 +1,39 @@
+
+EXPERIMENT NO: 02
+CONSTRAINTS AND KEYS
+
+SQL Constraints:
+a) NOT NULL - Ensures that a column cannot have a NULL value
+b) UNIQUE - Ensures that all values in a column are different
+c) PRIMARY KEY - A combination of a NOT NULL and UNIQUE.
+Uniquely identifies each row in a table
+d) FOREIGN KEY - Prevents actions that would destroy links between
+tables
+e) CHECK - Ensures that the values in a column satisfies a specific
+condition
+f) DEFAULT - Sets a default value for a column if no value is specified
+g) CREATE INDEX - Used to create and retrieve data from the database
+very quickly
+Keys in DBMS:
+a) Super Key:
+One or more columns that can single out every row, even if they include
+extra attributes not strictly needed for uniqueness.
+b) Primary Key:
+The minimal set of attributes needed to identify a row without any
+duplicates or null values.
+c) Candidate Key:
+Any key that qualifies to become a primary key because it’s both unique
+and minimal.
+d) Alternate Key:
+A candidate key not used as the primary key. It still uniquely identifies
+rows, but it isn’t the main choice for the table.
+e) Foreign Key :
+A column in one table that matches a primary key in another table to keep
+their data aligned.
+
+f) Composite Key:
+Two or more columns combined to form a unique identifier. Helpful
+when no single column can do the job on its own.
+g) Unique Key:
+Demands that all values differ within a column (or set of columns),
+though it typically allows one null. It prevents repeated entries.

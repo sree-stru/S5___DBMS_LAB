@@ -1,0 +1,70 @@
+
+EXPERIMENT NO : 04
+BUILT IN FUNCTIONS AND CONSTRAINTS
+
+Relational Constraints
+Relational constraints are rules that enforce data integrity and accuracy in a relational
+database. They ensure that the data stored in tables conforms to specific business rules and
+maintains consistency.
+Types of Constraints
+1. Domain Constraints
+These are the most elementary constraints, specifying that every value in a column must be
+from a predefined domain. A domain defines the data type (e.g., integer, string, date) and
+format for a column.
+2. Key Constraints
+These are called uniqueness constraints since it ensures that every tuple in the relation should
+be unique. A relation can have multiple keys or candidate keys(minimal superkey), out of
+which we choose one of the keys as the primary key, we don’t have any restriction on
+choosing the primary key out of candidate keys, but it is suggested to go with the candidate
+key with less number of attributes. Null values are not allowed in the primary key, hence Not
+Null constraint is also part of the key constraint.
+3. Entity Integrity Constraint
+This rule states that the primary key of a relation cannot have NULL values. This ensures
+that every row in the table can be uniquely identified. Since the primary key is used to
+reference rows, a NULL value would make it impossible to identify a specific row.
+4. Referential Integrity Constraint
+This constraint ensures that the relationship between two tables is maintained. It states that if
+a foreign key exists in a table, its value must either be a NULL or a valid value that exists in
+the primary key of the referenced table.
+Built-in Functions
+SQL provides various built-in functions to perform calculations and manipulate data.
+Numeric Functions
+a) ROUND(number, decimal_places): Rounds a number to a specified number of
+decimal places.
+
+b) TRUNCATE(number, decimal_places): Truncates a number to a specified number of
+decimal places.
+c) ABS(number): Returns the absolute value of a number.
+Date/Time Functions
+a) CURRENT_DATE: Returns the current date.
+b) CURRENT_TIME: Returns the current time.
+c) DATE_ADD(date, INTERVAL expr unit): Adds a time interval to a date.
+Conversion Functions:
+a) TO_CHAR(date/number, format): Converts a NUMBER to a string using the given
+format.
+b) TO_DATE(string, format): Converts a string to a DATE datatype.
+c) TO_NUMBER(string): Converts a string to a NUMBER datatype.
+d) CHR(n): Returns the character with ASCII code n.
+e) ASCII(char): Returns the ASCII value of the first character.
+String Functions:
+a) LENGTH(str): Returns the number of characters in the string (excluding trailing
+NULLs).
+b) UPPER(str) – Converts string to uppercase
+c) LOWER(str) – Converts string to lowercase
+d) INITCAP(str) – Capitalizes first letter of each word
+e) SUBSTR(str, start, length): Returns a substring of str, starting from position start,
+with length length. Positions start at 1.
+f) INSTR(str, substr [, start [, occurrence]]):Returns the position of a substring in a
+string.Optional parameters allow you to specify starting position and which
+occurrence to search.
+g) CONCAT(str1, str2): Joins two strings.
+h) REPLACE(str, search_str, replace_str): Replaces all occurrences of search_str in str
+with replace_str.
+i) TRIM([LEADING | TRAILING | BOTH] trim_char FROM str): Removes specified
+characters (or spaces by default) from a string.
+j) LTRIM(str [, trim_chars]) and RTRIM(str [, trim_chars]): Remove leading or trailing
+characters.
+k) TRANSLATE(str, from_chars, to_chars): Replaces each character in from_chars with
+the corresponding character in to_chars.
+l) LPAD(str, total_length, pad_char) and RPAD(str, total_length, pad_char): Pads the
+string to a specified total length with characters on the left or right.
